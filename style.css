@@ -1,0 +1,22 @@
+body {
+    background-color: darkred !important;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: darkred !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-card {
+    width: 30rem;
+}
+
+.question-footer {
+    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
