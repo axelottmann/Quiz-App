@@ -1,17 +1,79 @@
 body {
-    background-color: darkred !important;
+    background-color: white !important;
 }
 
-.container {
-    min-height: 100vh;
-    background-color: darkred !important;
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    box-shadow: -100px 0 0 0 white;
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.intro-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: olive;
+    background-size: cover;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.intro-content {
+    background: url('./img/brainbg.jpg') no-repeat center center;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: black;
+    box-shadow: 0 0 32px #0008;
+}
+
+.intro-btn {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    align-items: center;      
+    background: transparent !important;
+    min-height: 100vh;      
+}
+
+.logo {
+    padding-bottom: 20px;
+}
+
 .quiz-card {
-    width: 30rem;
+    width: 100%;
+    background: url('./img/brainbg.jpg') no-repeat center center !important;
+    background-size: cover !important;
+    box-shadow: 0 0 16px #0002;
+    color: #222;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+.navbar > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px;
+    background: olive !important;
+    padding: 46px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    min-width: 10px;
 }
 
 .question-footer {
@@ -19,4 +81,13 @@ body {
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+.quiz-answer-card:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-success, .bg-danger {
+    color: white !important;
 }
