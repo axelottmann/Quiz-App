@@ -40,6 +40,7 @@ let questions = [
         "answer_4": "8",
         "right_answer": 3
     },
+
 ];
 
 let currentQuestion = 0;
@@ -51,7 +52,7 @@ function init() {
 
 function showQuestion() {
     let question = questions[currentQuestion];
-    document.getElementById('next').disabled = true;
+    document.getElementById('next-button').disabled = true;
 
     document.getElementById('questiontext').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
@@ -60,23 +61,22 @@ function showQuestion() {
     document.getElementById('answer_4').innerHTML = question['answer_4'];
 }
 
-function answer(selection){
+function answer(selection) {
+
     let question = questions[currentQuestion];
     console.log('selected answer is', selection);
     let selectedQuestionNumber = selection.slice(-1);
     console.log('selectedQuestionNumber is', selectedQuestionNumber);
     console.log('Current question is', question['right_answer']);
 
+    let idOfRightAnswer = `answer_${question['right_answer']}`;
+
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('Richtige Antwort');
         document.getElementById(selection).parentNode.classList.add('bg-success');
     } else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger');        
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');        
     }
-}
-
-function startQuiz() {
-    document.getElementById('intro').style.display = 'none';
-    document.getElementById('quiz-container').style.display = '';
-    init();
+    document.getElementById('next-button').disabled = false;
 }

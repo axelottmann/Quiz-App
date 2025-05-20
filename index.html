@@ -14,16 +14,9 @@
 
 </head>
 
-<body>
-    <div id="intro" class="intro-overlay">
-        <div class="intro-content">
-            <h1 class="intro-title">Willkommen zum Quiz!</h1>
-            <p class="intro-text">Teste dein Wissen in verschiedenen Kategorien.</p>
-            <button class="btn btn-danger intro-btn" onclick="startQuiz()">Quiz starten ></button>
-        </div>
-    </div>
+<body onload="init()">
 
-    <div class="container" id="quiz-container" style="display:none;">
+    <div class="container">
 
         <nav class="navbar">
             <div>
@@ -32,7 +25,8 @@
                 <a href="#">CSS</a>
                 <a href="#">JS</a>
                 <a href="#">CSS</a>
-                <a href="#">CSS</a>           
+                <a href="#">CSS</a>
+                              
             </div>
         </nav>
 
@@ -68,7 +62,7 @@
                     <span>
                         <b>1</b> von <b id="all-questions">5</b> Fragen
                     </span>
-                    <button id="next" type="button" class="btn btn-danger" onclick="nextQuestion()" disabled>Nächste Frage ></button>
+                    <button id="next-button" class="btn btn-danger" disabled>Nächste Frage</button>
 
                 </div>                
             </div>
