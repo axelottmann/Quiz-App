@@ -7,7 +7,8 @@ a {
     color: white !important;
 }
 
-a:hover {
+
+.active-category {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.08);
     box-shadow: -100px 0 0 0 white;
@@ -17,10 +18,10 @@ a:hover {
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;  
-    align-items: center;      
+    justify-content: center;
+    align-items: center;
     background: transparent !important;
-    min-height: 100vh;      
+    min-height: 100vh;
 }
 
 .logo {
@@ -36,12 +37,55 @@ a:hover {
     border-bottom-right-radius: 8px;
 }
 
+.quiz-trophy {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 200px;
+    z-index: 2;
+}
+
+.intro-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    background-image: url(./img/brainbg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intro-content {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.card-body {
+    position: relative; 
+}
+
+.endscreen-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 375px;
+    text-align: center;
+    position: relative;
+}
+
 
 .navbar > div {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 10px;
+    width: 100%;
     background: olive !important;
     padding: 46px;
     border-top-left-radius: 8px;
@@ -63,4 +107,73 @@ a:hover {
 
 .bg-success, .bg-danger {
     color: white !important;
+}
+
+@media (max-width: 900px) {
+
+.quiz-trophy {
+        width: 20% !important;
+        height: 50% !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active-category {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -60px 0 0 white !important; 
+    }
+
+    .quiz-trophy {
+        width: 20% !important;
+        height: 50% !important;
+    }
+
+    img {
+        width: 60% !important;
+        height: 80% !important;
+    }
+
+    .navbar > div {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 10px;
+        padding: 32px !important;
+        background: olive !important;
+        border-top-left-radius: 8px!important;
+        border-top-right-radius: 8px!important;
+        border-bottom-left-radius: 0px!important;
+    }
+
+    .card-body {
+    padding: 32px !important;
+    }
+}
+
+@media (max-width: 530px) {
+    body {
+        font-size: 12px !important;
+    }
+
+    button {
+        font-size: 12px !important;
+    }
+
+    .quiz-trophy {
+        width: 20% !important;
+        height: 30% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar > div {
+        padding: 16px !important;
+    }
 }
